@@ -1,0 +1,6 @@
+Hello, this is line 1.
+12345
+Line 3: End of file creation.
+This is line 4: Appended content.
+67890
+Line 6: End of appending.
