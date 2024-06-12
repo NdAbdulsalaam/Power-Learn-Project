@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>GFG</title> 
+</head> 
+<body> 
+<form method="post"> 
+	{% csrf_token %} 
+	<input type="text" name="translate" required> 
+	<br> 
+	<select required name="language">
+        <option value="Arabic">Arabic</option>
+		<option value="Hindi">Hindi</option> 
+		<option value="Marathi">Marathi</option> 
+		<option value="German">German</option> 
+	</select> 
+	<br> 
+	<button type="submit">Translate</button> 
+</form> 
+</body> 
+</html> 
