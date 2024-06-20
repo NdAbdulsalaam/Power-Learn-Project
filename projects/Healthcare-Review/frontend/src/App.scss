@@ -1,0 +1,138 @@
+.title {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.owl-nav {
+    .owl-prev {
+        position: absolute;
+        left: -50px;
+        top: 40%;
+        font-size: 60px !important;
+        transform: translate(-50%, -50%);
+
+        span {
+            color: rgba(204, 199, 199, 0.781);
+        }
+        &:hover {
+            background-color: #e7e0e0 !important;
+            span {
+                color: #afa9a9;
+            }
+        }
+    }
+    .owl-next {
+        position: absolute;
+        right: -50px;
+        top: 40%;
+        font-size: 60px !important;
+        transform: translate(-50%, -50%);
+
+        span {
+            color: rgba(204, 199, 199, 0.781);
+        }
+        &:hover {
+            background-color: #e7e0e0 !important;
+            span {
+                color: #afa9a9;
+            }
+        }
+    }
+}
+
+.owl-dots {
+    display: none !important;
+}
+
+.btn-primary {
+    width: 140px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #01b4e4 !important;
+    border-color: #01b4e4 !important;
+}
+
+.ant-btn-primary {
+    width: 140px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #01b4e4 !important;
+    border-color: #01b4e4 !important;
+}
+
+span.ant-tag {
+    height: 30px;
+    width: 110px;
+
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #e3e3e3;
+}
+
+span.anticon.anticon-star {
+    margin-left: 5px;
+}
+
+span.anticon.anticon-comment {
+    margin-left: 5px;
+}
+
+span.ant-statistic-content-prefix {
+    display: flex;
+    align-items: center;
+}
+
+.ant-statistic-content {
+    display: flex;
+}
+
+.ant-statistic-title {
+    font-size: 15px;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #01b4e4;
+}
+
+.ant-tabs-ink-bar {
+    background: #01b4e4;
+}
+
+.ant-tabs-tab .ant-tabs-tab-btn:hover {
+    color: #01b4e4;
+}
+
+.ant-form-vertical .ant-form-item-label,
+.ant-col-24.ant-form-item-label,
+.ant-col-xl-24.ant-form-item-label {
+    padding: 0;
+}
+
+.ant-form-item {
+    margin-bottom: 15px;
+}
+
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    content: none;
+}
+
+.btn-save {
+    margin-top: 30px;
+}
+
+.ant-tabs-tab {
+    font-size: 1rem;
+}
+
+.ant-col.ant-col-24.ant-form-item-label label {
+    font-size: 1rem;
+}
+
+.ant-empty-description {
+    font-size: 1rem;
+}

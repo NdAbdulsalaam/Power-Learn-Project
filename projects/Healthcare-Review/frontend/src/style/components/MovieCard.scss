@@ -1,0 +1,71 @@
+.card {
+    height: 390px;
+    width: 180px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #000;
+        &:hover {
+            color: #48c9ec;
+            text-decoration: none;
+        }
+    }
+
+    &--rating {
+        width: 50px;
+        background-color: #081c22;
+        font-weight: 800;
+        color: #fff;
+        border: 3px solid #383434;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateY(-60%);
+    }
+
+    &-body {
+        padding: 1.5rem 0.5rem;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    &-title {
+        font-weight: 600;
+        font-size: 1rem;
+        display: inline-block;
+        margin-bottom: 10px;
+        min-height: 50px;
+    }
+
+    span.view-count {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        text-indent: -10000px;
+    }
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    font-size: 32px;
+    fill: #fff;
+}
+
+p.card-text.card-text {
+    display: flex;
+    justify-content: space-between;
+}
+span.anticon.anticon-eye {
+    margin-right: 5px;
+}

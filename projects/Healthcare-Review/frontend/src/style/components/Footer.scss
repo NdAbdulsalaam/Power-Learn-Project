@@ -1,0 +1,24 @@
+.footer {
+    background: rgb(3, 37, 65);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.cpy-right p,
+.cpy-right a {
+    letter-spacing: 1px;
+    color: #999;
+    line-height: 1em;
+}
+
+.right-info {
+    text-align: right;
+    align-self: center;
+}
+
+.right-info p {
+    font-weight: 600px;
+    color: white;
+    margin-bottom: 0;
+}
