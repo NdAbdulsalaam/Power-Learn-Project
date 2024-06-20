@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Pharmacy List{% endblock %}
+{% block content %}
+<h1>Pharmacies</h1>
+<div id="map" style="height: 500px;"></div>
+<ul>
+    {% for pharmacy in pharmacies %}
+        <li><a href="{% url 'pharmacy_detail' pharmacy.id %}">{{ pharmacy.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

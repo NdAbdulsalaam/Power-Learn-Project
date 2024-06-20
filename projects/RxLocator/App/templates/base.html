@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            var mapCenter = {lat: -34.397, lng: 150.644};  // Default center
+            var pharmacies = JSON.parse('{{ pharmacies_json|escapejs }}');
+
+            // If there are pharmacies, center the map around the first one
+            if (pharmacies.length > 0) {
+                mapCenter = {lat: pharmacies[0].latitude, lng: pharmacies[0].longitude};
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: mapCenter
+            });
+
+            pharmacies.forEach(function(pharmacy) {
+                var marker = new google.maps.Marker({
+                    position: {lat: pharmacy.latitude, lng: pharmacy.longitude},
+                    map: map,
+                    title: pharmacy.name
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <nav>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

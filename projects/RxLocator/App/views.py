@@ -3,7 +3,8 @@ from .models import Pharmacy, Review
 from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.contrib.auth import login, logout #, authenticate
+import json
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 def register(request):
@@ -15,7 +16,7 @@ def register(request):
             return redirect('pharmacy_list')
     else:
         form = UserCreationForm()
-    return render(request, 'locator/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -26,7 +27,7 @@ def user_login(request):
             return redirect('pharmacy_list')
     else:
         form = AuthenticationForm()
-    return render(request, 'locator/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def user_logout(request):
     logout(request)
@@ -36,12 +37,15 @@ def user_logout(request):
 
 def pharmacy_list(request):
     pharmacies = Pharmacy.objects.all()
-    return render(request, 'locator/pharmacy_list.html', {'pharmacies': pharmacies})
+    # pharmacies = list(Pharmacy.objects.values('name', 'latitude', 'longitude'))
+    
+    # return render(request, 'pharmacy_list.html', {'pharmacies': json.dumps(pharmacies)})
+    return render(request, 'pharmacy_list.html', {'pharmacies': pharmacies})
 
 def pharmacy_detail(request, pharmacy_id):
     pharmacy = get_object_or_404(Pharmacy, id=pharmacy_id)
     reviews = Review.objects.filter(pharmacy=pharmacy)
-    return render(request, 'locator/pharmacy_detail.html', {'pharmacy': pharmacy, 'reviews': reviews})
+    return render(request, 'pharmacy_detail.html', {'pharmacy': pharmacy, 'reviews': reviews})
 
 @login_required
 def add_review(request, pharmacy_id):
@@ -53,4 +57,4 @@ def add_review(request, pharmacy_id):
         # return HttpResponseRedirect(reverse('pharmacy_detail', args=[pharmacy.id]))
         return redirect(reverse('pharmacy_detail', args=[pharmacy.id]))
 
-    return render(request, 'locator/add_review.html', {'pharmacy': pharmacy})
+    return render(request, 'add_review.html', {'pharmacy': pharmacy})

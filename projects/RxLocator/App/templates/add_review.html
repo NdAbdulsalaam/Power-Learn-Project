@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review for {{ pharmacy.name }}</title>
+</head>
+<body>
+    <h1>Add Review for {{ pharmacy.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating">
+            {% for i in "12345" %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
